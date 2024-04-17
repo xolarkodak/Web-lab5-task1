@@ -1,13 +1,13 @@
-// Функція для створення масиву з випадковими значеннями
+
  function generateArray(length) {
     var arr = [];
     for (var i = 0; i < length; i++) {
-      arr.push(Math.floor(Math.random() * 100)); // Генеруємо випадкові числа від 0 до 99
+      arr.push(Math.floor(Math.random() * 100));
     }
     return arr;
   }
 
-  // Функція для знаходження максимального та мінімального значень серед елементів з парними та непарними індексами
+  
   function findMinMax(arr) {
     var evenMax = -Infinity;
     var evenMin = Infinity;
@@ -15,14 +15,14 @@
     var oddMin = Infinity;
 
     for (var i = 0; i < arr.length; i++) {
-      if (i % 2 === 0) { // Парний індекс
+      if (i % 2 === 0) { 
         if (arr[i] > evenMax) {
           evenMax = arr[i];
         }
         if (arr[i] < evenMin) {
           evenMin = arr[i];
         }
-      } else { // Непарний індекс
+      } else {
         if (arr[i] > oddMax) {
           oddMax = arr[i];
         }
@@ -40,7 +40,7 @@
     };
   }
 
-  // Функція для сортування масиву у порядку зменшення методом вибору
+
   function selectionSort(arr) {
     var n = arr.length;
 
@@ -60,12 +60,11 @@
     return arr;
   }
 
-  // Основна функція, яка викликається при натисканні кнопки
   function main() {
     var length = parseInt(document.getElementById("length").value);
     var array = generateArray(length);
 
-    var sortedArray = selectionSort(array.slice()); // Створюємо копію масиву для сортування
+    var sortedArray = selectionSort(array.slice()); 
     document.getElementById("resultSort").innerHTML = "Вхідний масив: " + array.join(", ") + "<br>" +
                                                        "Відсортований масив: " + sortedArray.join(", ");
     
